@@ -1,0 +1,37 @@
+# Ignore files and directories created by macOS
+.DS_Store
+
+# Ignore files and directories created by Windows
+Thumbs.db
+Desktop.ini
+
+# Ignore Python virtual environment directories
+venv/
+__pycache__/
+
+# Ignore compiled Python files
+*.pyc
+*.pyo
+__pycache__/
+
+# Ignore log files
+*.log
+
+# Ignore database files
+*.sqlite
+
+# Ignore text editor and IDE files
+.vscode/
+.idea/
+
+# Ignore system and environment-specific files
+.env
+*.env
+
+# Ignore compiled executables
+*.exe
+*.out
+
+# Ignore package manager directories
+node_modules/
+
