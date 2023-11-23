@@ -24,6 +24,14 @@ __pycache__/
 .vscode/
 .idea/
 
+# Spyder specific files and directories
+.spyderproject
+.spyproject
+.spyder-py3
+.spyder-py2
+.spydata
+.spyder*
+
 # Ignore system and environment-specific files
 .env
 *.env
