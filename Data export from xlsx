@@ -1,0 +1,41 @@
+import pandas as pd
+from openpyxl import load_workbook
+
+# Replace 'your_file.xlsx' with the actual name of your Excel file
+file_path = "/Users/onurderinoz/PycharmProjects/pythonProject/venv/initial_data.xlsx"
+
+# Select the active sheet (you can also specify the sheet by name)
+workbook = load_workbook(file_path)
+
+# Select the active sheet (you can also specify the sheet by name)
+sheet = workbook.active
+
+# Find the maximum row with data
+max_row = sheet.max_row
+max_column = sheet.max_column
+
+people_list = []
+
+# Iterate over rows
+for row_index in range(1, 6 + 1):
+    # Create a dictionary for the current person
+    person_data = {"features": [], "funds": []}
+
+    # Iterate over columns in the current row
+    for column_index in range(1, sheet.max_column + 1):
+        cell_value = sheet.cell(row=row_index, column=column_index).value
+
+        # Append values to the appropriate lists in the dictionary
+        if 1 <= column_index <= 13:
+            person_data["features"].append(cell_value)
+        elif 15 <= column_index <= sheet.max_column:
+            person_data["funds"].append(cell_value)
+
+    # Append the current person's data to the list of people
+    people_list.append(person_data)
+
+# Print the list of people
+for person in people_list:
+    print("Features:", person["features"])
+    print("Funds:", person["funds"])
+    print()
